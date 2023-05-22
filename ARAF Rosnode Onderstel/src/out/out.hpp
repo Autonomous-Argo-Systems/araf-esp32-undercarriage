@@ -4,13 +4,10 @@
 #include <ros.h>
 #include <Adafruit_NeoPixel.h>
 
-// Error Config
 typedef struct {
     String error;
-    int code[4];
 } error_out;
 
-// Error Config
 typedef struct {
     String info;
 } info_out;
@@ -25,7 +22,6 @@ typedef struct {
 #define PIXELINDEX 0
 #define BUZZER_PIN 2
 
-
 class Out
 {
 public:
@@ -39,15 +35,19 @@ public:
 
     /// @brief log an error message
     /// @param error 
-    void error(error_out *error);
+    void error(error_out error);
 
     /// @brief log an info message
     /// @param info 
-    void info(info_out *info);
+    void info(info_out info);
 
     /// @brief set an log color
     /// @param color 
-    void color(color_out *color);
+    void color(color_out color);
+
+    /// @brief beep for a certain time
+    /// @param wait 
+    void beep(int wait);
 };
 
 #endif
