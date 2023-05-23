@@ -1,4 +1,6 @@
 #include "power.hpp"
+#define DIVIDED_CONSTANT 0.0008056640625f
+#define MULTIPLY_CONSTANT 11.0f
 
 Power::Power(){
     pinMode(VOLTAGE_PIN, INPUT);
@@ -6,6 +8,6 @@ Power::Power(){
 
 float Power::Read(){
     int raw_voltage = analogRead(VOLTAGE_PIN);
-    float cal_voltage = (float) raw_voltage * 0.00322265625f * 11;
+    float cal_voltage = (float) raw_voltage * DIVIDED_CONSTANT * MULTIPLY_CONSTANT;
     return cal_voltage;
 }

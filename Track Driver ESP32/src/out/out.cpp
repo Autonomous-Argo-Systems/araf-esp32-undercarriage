@@ -19,7 +19,7 @@ void Out::error(error_out error){
 }
 
 void Out::info(info_out info){
-    if(node_handler != nullptr){ node_handler->logerror(info.info.c_str());}
+    if(node_handler != nullptr){ node_handler->loginfo(info.info.c_str());}
 }
 
 void Out::color(color_out color){

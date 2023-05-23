@@ -15,7 +15,7 @@ Drive *drive;
 // Driving.
 void driving(const geometry_msgs::Twist &twist){
   drive->Speed(twist.linear.x, twist.linear.y);
-  out->info({info: "Got a driving message."});
+  out->info({info: "Got a driving message"});
 }
 
 // Ros.
@@ -53,4 +53,5 @@ void loop() {
     pub_battery.publish(&battery_msg);     
   }
   nh.spinOnce();  
+  delay(1);
 }

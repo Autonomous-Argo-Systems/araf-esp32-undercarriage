@@ -19,8 +19,7 @@ public:
     /// @brief Boots up power hardware
     Drive();
 
-    /// @brief Reads battery voltage
-    /// @return The value as float
+    /// @brief Sets speed
     void Speed(float left, float right);
 };
 
