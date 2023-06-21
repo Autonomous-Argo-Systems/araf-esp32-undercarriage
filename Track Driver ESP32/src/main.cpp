@@ -5,7 +5,6 @@
 #include <sensor_msgs/BatteryState.h>
 #include <geometry_msgs/Twist.h>
 #include <std_msgs/Bool.h>
-#include <time.h>
 
 // Data.
 Out *out;
@@ -49,7 +48,6 @@ void loop() {
     out->color({r: 0, g: 150, b:0});
 
     battery_msg.voltage = power->Read();
-    battery_msg.percentage = ((battery_msg.voltage - 23.0f) / 3.0f) * 100.0f;
     pub_battery.publish(&battery_msg);     
   }
   nh.spinOnce();  

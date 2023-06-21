@@ -26,7 +26,6 @@ Drive::Drive(){
 
 
 void Drive::Speed(float left, float right){
-    String test;
     if (left > -0.1f && left < 0.1f){
         mcp.setChannelValue(MCP4728_CHANNEL_C, 0);
     } else {
